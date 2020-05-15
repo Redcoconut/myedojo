@@ -20,6 +20,64 @@
         margin-left: 10%;
       }
     </style>
+    <!-- Style for the calendar -->
+    <style>
+		#evendiv {
+			border: 1px solid grey;
+			width: 220px;
+			position: relative;
+			border-radius: 10px;
+			margin-left: 10px;
+		}
+		#datediv{
+    		position: absolute;
+			border: 1px solid grey;
+			width: 23%;
+			right: 0;
+			top: 0;
+			margin: 10px;
+			text-align: center;
+			background-color: grey;
+		 	border-radius: 10px;
+		 	color: white !important;
+		 	font-weight: bold;
+		 	padding: 3px;
+    	}
+    	#descrip{
+    		margin-left: 10px;
+    	}
+    	#descrip a{color: blue;}
+    	#eventitle{font-size: 20px;}
+    	#evendate{font-size: 15px;}
+    	#eventable{width: auto;}
+    	#eventd{width: 220px;}
+		@media (pointer:none), (pointer:coarse) { 
+			#evendiv {
+				width: 80%;
+				margin-left: 10%;
+				margin-top: 10px;
+			}
+			#eventd{
+				display: block;
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			#eventable{
+				width: 100%;
+			}
+			#datediv{
+				width: 25%;
+			 	padding: 10px;
+			 	font-size: 40px;
+			 	margin: 20px;
+			}
+	    	#eventitle{font-size: 25px;margin-bottom: 10px;}
+	    	#evendate{font-size: 20px;}
+	    	#descrip{font-size: 20px;margin-top: 10px;}
+		}
+
+    	
+    </style>
   </head>
 
   <body class="size-1140">
@@ -110,10 +168,8 @@
         <br>
         <h2 class="text-size-50 text-center">Class Times:</h2>
         <hr class="break-small background-primary break-center">
-        <div id="calendar-div">
-          <script type="text/javascript" src="https://localendar.com/js/PublishedResponsiveIframe.js"></script>
-          <iframe style="width:100%"; id="localendar-iframe" src="https://localendar.com/public/coconutd?style=W6"></iframe>
-        </div>
+        <div id="js-gcal-event">
+    	</div>
         <a name='about'></a>
       </section>
       <!-- Section 1 -->
@@ -189,5 +245,11 @@
     <script type="text/javascript" src="js/responsee.js"></script>
     <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
     <script type="text/javascript" src="js/template-scripts.js"></script>
+    <!-- For the calendar -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.23/plugin/localizedFormat.js"></script>
+    <script>dayjs.extend(window.dayjs_plugin_localizedFormat)</script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="google-calendar.js"></script>
   </body>
 </html>
