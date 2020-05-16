@@ -29,7 +29,7 @@ function printCalendar () {
       'orderBy': 'startTime'
     });
   }).then(function (response) {
-    console.log(response); // TODO: Remove!
+    //console.log(response); // TODO: Remove!
     if (response.result.items) {
       var getNowPlayingDiv = document.getElementById('js-gcal-event'); // Make sure your HTML has This ID!
       // Create a table with events:
@@ -37,11 +37,6 @@ function printCalendar () {
       response.result.items.forEach(function (entry) {
         var eventDate = dayjs(entry.start.dateTime).format('LL'); // eg: March 26, 2020 6:00 PM
         var eventEndsAt = dayjs(entry.end.dateTime).format('LT'); // eg: 7:00 PM
-
-        console.log("PLEASE")
-        console.log(entry.start.dateTime)
-        console.log("Alirhgty")
-        console.log(dayjs(entry.start.dateTime).format('ddd'))
         calendarRows.push('' +
 			'<td id="eventd"><div name="viewport" id="evendiv">' +
 		      	'<p id="eventitle" style="margin-left: 10px; margin-top: 25px; color: #C81010; max-width: 70%;">' + entry.summary + '</p>' +
@@ -53,6 +48,7 @@ function printCalendar () {
 				'<p id="evendate" style="margin-left: 10px; color: grey; margin-bottom: 0;">' + eventDate + '</p>' + 
 				'<p id="evendate" style=" margin-left: 10px; color: grey; margin-top: 0;">' + dayjs(entry.start.dateTime).format('HH:mm') + ' - ' + dayjs(entry.end.dateTime).format('HH:mm') + '</p>' +
 		        '<p id="descrip">' + entry.description + '</p>' +
+		        '<a target="_blank" id="evenadd" href="' + entry.htmlLink + '">Add to you calendar<a>' +
 			'</div></td>');
       });
 
