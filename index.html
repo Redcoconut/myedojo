@@ -143,11 +143,21 @@
       <section>
         <br>
         <h2 class="text-size-50 text-center">Class Times:</h2>
+		<p style="text-align: center;">View upcoming classes.<br>In your local time!</p>
         <hr class="break-small background-primary break-center">
-        <p style="text-align: center;">In your local time!</p>
-        <div id="js-gcal-event">
-    	</div>
-		<div id="js-gcal-event-advanced">
+		<div style="text-align: center">
+		 	<button id="advanced_button" onclick="showAdvanced('Advanced')" style="cursor: pointer; padding: 5px; margin-left: 10px; margin-right: 10px; text-decoration: none; background-color: white; border: none;">Advanced</button>
+			<button id="beginners_button" onclick="showAdvanced('Beginners')" style="cursor: pointer; padding: 5px; margin-left: 10px; margin-right: 10px; text-decoration: none; background-color: white; border: none; border-bottom: 1px solid grey">Beginners</button>
+			<button id="yoga_button" onclick="showAdvanced('Yoga')" style="cursor: pointer; padding: 5px; margin-left: 10px; margin-right: 10px; text-decoration: none; background-color: white; border: none;">Yoga</button>
+			<button onclick="window.location.href='/calendar.html'" style="cursor: pointer; padding: 5px; margin-left: 10px; margin-right: 10px; text-decoration: none; background-color: white; border: none;">View all</button>
+
+		</div>
+
+		<div id="js-gcal-event-advanced" style="display: none">
+		</div>
+		<div id="js-gcal-event-yoga" style="display: none">
+		</div>
+		<div id="js-gcal-event-beginners">
 		</div>
         <a name='about'></a>
       </section>
