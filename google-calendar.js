@@ -10,18 +10,18 @@ function showAdvanced(test) {
 	yoga.style.display = "none";
 	begi.style.display = "none";
 	adv.style.display = "none";
-	document.getElementById("yoga_button").style.borderBottom = "none"
-	document.getElementById("advanced_button").style.borderBottom = "none"
-	document.getElementById("beginners_button").style.borderBottom = "none"
+	document.getElementById("yoga_button").style.border = "none"
+	document.getElementById("advanced_button").style.border = "none"
+	document.getElementById("beginners_button").style.border = "none"
 	if (test == "Advanced") {
 		adv.style.display = "block";
-		document.getElementById("advanced_button").style.borderBottom = "1px solid grey"
+		document.getElementById("advanced_button").style.borderBottom = "0.1px solid black"
 	} else if (test == "Yoga"){
 		yoga.style.display = "block";
-		document.getElementById("yoga_button").style.borderBottom = "1px solid grey"
+		document.getElementById("yoga_button").style.borderBottom = "0.1px solid black"
 	} else if (test == "Beginners") {
 		begi.style.display = "block";
-		document.getElementById("beginners_button").style.borderBottom = "1px solid grey"
+		document.getElementById("beginners_button").style.borderBottom = "0.1px solid black"
 
 	}
 
