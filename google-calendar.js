@@ -31,7 +31,7 @@ function printCalendar () {
   }).then(function (response) {
     //console.log(response); // TODO: Remove!
     if (response.result.items) {
-      var getNowPlayingDiv = document.getElementById('js-gcal-event'); // Make sure your HTML has This ID!
+      var getNowPlayingDiv = document.getElementById('js-gcal-event-advanced'); // Make sure your HTML has This ID!
       // Create a table with events:
       var calendarRows = ['<table id="eventable">'];
       response.result.items.forEach(function (entry) {
@@ -45,7 +45,7 @@ function printCalendar () {
 						'<p style="margin:0;color:white;">' + dayjs(entry.start.dateTime).format('DD') + '</p>' +
 						'<p style="margin:0;color:white;">' + dayjs(entry.start.dateTime).format('HH:mm') + '</p>' +
 					'</div>' +
-				'<p id="evendate" style="margin-left: 10px; color: grey; margin-bottom: 0;">' + eventDate + '</p>' + 
+				'<p id="evendate" style="margin-left: 10px; color: grey; margin-bottom: 0;">' + eventDate + '</p>' +
 				'<p id="evendate" style=" margin-left: 10px; color: grey; margin-top: 0;">' + dayjs(entry.start.dateTime).format('HH:mm') + ' - ' + dayjs(entry.end.dateTime).format('HH:mm') + '</p>' +
 		        '<p id="descrip">' + entry.description + '</p>' +
 		        '<a target="_blank" id="evenadd" href="' + entry.htmlLink + '">Add to you calendar<a>' +
