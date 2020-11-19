@@ -79,7 +79,7 @@ function printCalendar () {
 				'<p id="evendate" style="margin-left: 10px; color: grey; margin-bottom: 0;">' + eventDate + '</p>' +
 				'<p id="evendate" style=" margin-left: 10px; color: grey; margin-top: 0;">' + dayjs(entry.start.dateTime).format('HH:mm') + ' - ' + dayjs(entry.end.dateTime).format('HH:mm') + '</p>' +
 		        '<p id="descrip">' + entry.description + '</p>' +
-		        '<a target="_blank" id="evenadd" href="' + entry.htmlLink + '">Add to you calendar<a>' +
+		        '<a target="_blank" id="evenadd" href="' + entry.htmlLink + '">📅 Add to your calendar<a>' +
 			'</div></td>'
 		if (entry.summary.includes("Advanced") && calendarRowsAdvanced.length < 6){
 			calendarRowsAdvanced.push(temp);
