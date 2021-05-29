@@ -6,11 +6,14 @@ function showAdvanced(test) {
 	console.log(test)
 	var adv = document.getElementById("js-gcal-event-advanced");
 	var yoga = document.getElementById("js-gcal-event-yoga");
+	var kids = document.getElementById("js-gcal-event-kids");
 	var begi = document.getElementById("js-gcal-event-beginners");
 	yoga.style.display = "none";
+	kids.style.display = "none";
 	begi.style.display = "none";
 	adv.style.display = "none";
 	document.getElementById("yoga_button").style.border = "none"
+	document.getElementById("kids_button").style.border = "none"
 	document.getElementById("advanced_button").style.border = "none"
 	document.getElementById("beginners_button").style.border = "none"
 	if (test == "Advanced") {
@@ -19,6 +22,9 @@ function showAdvanced(test) {
 	} else if (test == "Yoga"){
 		yoga.style.display = "block";
 		document.getElementById("yoga_button").style.borderBottom = "0.1px solid black"
+	} else if (test == "Kids"){
+		kids.style.display = "block";
+		document.getElementById("kids_button").style.borderBottom = "0.1px solid black"
 	} else if (test == "Beginners") {
 		begi.style.display = "block";
 		document.getElementById("beginners_button").style.borderBottom = "0.1px solid black"
@@ -58,11 +64,13 @@ function printCalendar () {
     if (response.result.items) {
       var getNowPlayingDivAdvanced = document.getElementById('js-gcal-event-advanced'); // Make sure your HTML has This ID!
 	  var getNowPlayingDivYoga = document.getElementById('js-gcal-event-yoga'); // Make sure your HTML has This ID!
+	  var getNowPlayingDivKids = document.getElementById('js-gcal-event-kids'); // Make sure your HTML has This ID!
 	  var getNowPlayingDivBeginners = document.getElementById('js-gcal-event-beginners'); // Make sure your HTML has This ID!
 
       // Create a table with events:
       var calendarRowsAdvanced = ['<table id="eventable">'];
 	  var calendarRowsYoga = ['<table id="eventable">'];
+	  var calendarRowsKids = ['<table id="eventable">'];
 	  var calendarRowsBeginners = ['<table id="eventable">'];
 
       response.result.items.forEach(function (entry) {
@@ -85,16 +93,20 @@ function printCalendar () {
 			calendarRowsAdvanced.push(temp);
 		} else if (entry.summary.includes("Yoga") && calendarRowsYoga.length < 6) {
 			calendarRowsYoga.push(temp);
+		} else if (entry.summary.includes("Kids") && calendarRowsKids.length < 6) {
+			calendarRowsKids.push(temp);
 		} else if (entry.summary.includes("Beginners") && calendarRowsBeginners.length < 6) {
 			calendarRowsBeginners.push(temp);
 		}
       });
       calendarRowsAdvanced.push('</table>');
 	  calendarRowsYoga.push('</table>');
+	  calendarRowsKids.push('</table>');
 	  calendarRowsBeginners.push('</table>');
 
       getNowPlayingDivAdvanced.innerHTML = calendarRowsAdvanced.join('');
 	  getNowPlayingDivYoga.innerHTML = calendarRowsYoga.join('');
+	  getNowPlayingDivKids.innerHTML = calendarRowsKids.join('');
 	  getNowPlayingDivBeginners.innerHTML = calendarRowsBeginners.join('');
 
     }
